@@ -13,6 +13,13 @@ draw = function(){
   triangle(200, 104, 280, 280, 120, 280);
   fill(255, 255, 255);
   
+  drawDice(180,350);
+  
+  if(mousePressed){
+  fill(255,0,0);
+  textSize(40);
+    text("🎲", random(0,600), random(0,400)); 
+  }  
   if (answer == 1) {
    
     text("YES", 159, 229); 
@@ -28,8 +35,14 @@ draw = function(){
 textSize(50);
 text("😱", mouseX, mouseY,);
 };
+
 mouseClicked = function(){
-  answer = round(random(1, 5));
+  answer = round(random(1, 3));
 };
 
+ var drawDice = function(diceX, diceY, diceColor){
+  textSize(30);
+  fill(diceColor);
+  text("🎲", diceX, diceY, diceColor);
+};
 

@@ -14,11 +14,13 @@ draw = function(){
   fill(255, 255, 255);
   
   drawDice(180,350);
+  drawEye(200, 200, color(0,0,0));
+
   
   if(mousePressed){
-  fill(255,0,0);
+  fill(random(0,255), random(0,255), random(0,255));
   textSize(40);
-    text("🎲", random(0,600), random(0,400)); 
+    text("???", random(0,600), random(0,400)); 
   }  
   if (answer == 1) {
    
@@ -43,6 +45,17 @@ mouseClicked = function(){
  var drawDice = function(diceX, diceY, diceColor){
   textSize(30);
   fill(diceColor);
-  text("🎲", diceX, diceY, diceColor);
+  text("🎲",diceX, diceY, diceColor);
 };
+
+var drawEye = function(eyeX, eyeY, eyeColor){
+  fill(eyeColor);
+  strokeWeight(1);
+  stroke(0,0,0);
+  ellipse(eyeX,eyeY,20,20); //iris
+  fill(0,0,0);
+ 
+};
+
+
 
